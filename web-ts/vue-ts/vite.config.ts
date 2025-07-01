@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/web-cv/',
+  base: '/web-cv-ts/',
   plugins: [
     vue(),
     vueJsx(),
