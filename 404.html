@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/vue-ts/" />
+    <script>
+      // Redirect all requests to the root index.html and preserve the path for SPA routing
+      var path = window.location.pathname.replace(/^\/vue-ts/, '');
+      window.location.replace('/vue-ts/' + (path ? ('#' + path) : ''));
+    </script>
+  </head>
+  <body></body>
+</html> 
