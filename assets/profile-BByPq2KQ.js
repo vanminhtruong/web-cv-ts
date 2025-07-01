@@ -1,4 +1,4 @@
-import { H as defineStore, I as ref } from "./vendor-CCPa_ARj.js";
+import { H as defineStore, I as ref } from "./vendor-BFdtVDZL.js";
 const useProfileStore = defineStore("profile", () => {
   const fullName = ref("Trương Văn Minh");
   const jobTitle = ref("Frontend Developer");

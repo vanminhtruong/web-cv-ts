@@ -1,6 +1,6 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MainLayout-BkoSOXbP.js","assets/theme-CddU5wa0.js","assets/vendor-CCPa_ARj.js","assets/color-DqxGBczO.js","assets/vendor-toast-Fl43GEBD.js","assets/vendor-toast-jG2HNJHr.css","assets/HomeView-C2TffI7l.js","assets/HomeView-CRwb-ZLO.css","assets/SkillsView-Cug-S5Bi.js","assets/ExperienceView-CwtPdnoz.js","assets/ContactView-CwtGu_Vc.js"])))=>i.map(i=>d[i]);
-import { s as src_default } from "./vendor-toast-Fl43GEBD.js";
-import { d as defineComponent, b as createBlock, v as openBlock, w as withCtx, y as createVNode, u as unref, R as RouterView, z as defineAsyncComponent, A as createRouter, B as createWebHistory, C as createI18n, p as createApp, D as createPinia } from "./vendor-CCPa_ARj.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MainLayout-oYTHd8Hw.js","assets/theme-BrM0jE5z.js","assets/vendor-BFdtVDZL.js","assets/color-dH0ZqwuS.js","assets/vendor-toast-BVu51o8f.js","assets/vendor-toast-jG2HNJHr.css","assets/HomeView-CrtTOjkg.js","assets/HomeView-CRwb-ZLO.css","assets/SkillsView-CChKbfC5.js","assets/ExperienceView-C19qjZ8f.js","assets/ContactView-DSo__yHp.js"])))=>i.map(i=>d[i]);
+import { s as src_default } from "./vendor-toast-BVu51o8f.js";
+import { d as defineComponent, b as createBlock, v as openBlock, w as withCtx, y as createVNode, u as unref, R as RouterView, z as defineAsyncComponent, A as createRouter, B as createWebHashHistory, C as createI18n, p as createApp, D as createPinia } from "./vendor-BFdtVDZL.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -32,7 +32,7 @@ import { d as defineComponent, b as createBlock, v as openBlock, w as withCtx, y
 })();
 const scriptRel = "modulepreload";
 const assetsURL = function(dep) {
-  return "/web-cv/" + dep;
+  return "/web-cv-ts/" + dep;
 };
 const seen = {};
 const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -87,7 +87,7 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "App",
   setup(__props) {
-    const MainLayout = defineAsyncComponent(() => __vitePreload(() => import("./MainLayout-BkoSOXbP.js"), true ? __vite__mapDeps([0,1,2,3,4,5]) : void 0));
+    const MainLayout = defineAsyncComponent(() => __vitePreload(() => import("./MainLayout-oYTHd8Hw.js"), true ? __vite__mapDeps([0,1,2,3,4,5]) : void 0));
     return (_ctx, _cache) => {
       return openBlock(), createBlock(unref(MainLayout), null, {
         default: withCtx(() => [
@@ -110,26 +110,26 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => __vitePreload(() => import("./HomeView-C2TffI7l.js"), true ? __vite__mapDeps([6,1,2,4,5,7]) : void 0)
+    component: () => __vitePreload(() => import("./HomeView-CrtTOjkg.js"), true ? __vite__mapDeps([6,1,2,4,5,7]) : void 0)
   },
   {
     path: "/skills",
     name: "skills",
-    component: () => __vitePreload(() => import("./SkillsView-Cug-S5Bi.js"), true ? __vite__mapDeps([8,1,2,4,5]) : void 0)
+    component: () => __vitePreload(() => import("./SkillsView-CChKbfC5.js"), true ? __vite__mapDeps([8,1,2,4,5]) : void 0)
   },
   {
     path: "/experience",
     name: "experience",
-    component: () => __vitePreload(() => import("./ExperienceView-CwtPdnoz.js"), true ? __vite__mapDeps([9,3,2,4,5]) : void 0)
+    component: () => __vitePreload(() => import("./ExperienceView-C19qjZ8f.js"), true ? __vite__mapDeps([9,3,2,4,5]) : void 0)
   },
   {
     path: "/contact",
     name: "contact",
-    component: () => __vitePreload(() => import("./ContactView-CwtGu_Vc.js"), true ? __vite__mapDeps([10,3,2,4,5]) : void 0)
+    component: () => __vitePreload(() => import("./ContactView-DSo__yHp.js"), true ? __vite__mapDeps([10,3,2,4,5]) : void 0)
   }
 ];
 const router = createRouter({
-  history: createWebHistory("/web-cv/"),
+  history: createWebHashHistory("/web-cv-ts/"),
   routes
 });
 const common$5 = { "backToTop": "Back to top" };

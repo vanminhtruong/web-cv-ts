@@ -8137,6 +8137,12 @@ function createWebHistory(base) {
   });
   return routerHistory;
 }
+function createWebHashHistory(base) {
+  base = location.host ? base || location.pathname + location.search : "";
+  if (!base.includes("#"))
+    base += "#";
+  return createWebHistory(base);
+}
 function isRouteLocation(route) {
   return typeof route === "string" || route && typeof route === "object";
 }
@@ -14572,7 +14578,7 @@ if (__INTLIFY_PROD_DEVTOOLS__) {
 }
 export {
   createRouter as A,
-  createWebHistory as B,
+  createWebHashHistory as B,
   createI18n as C,
   createPinia as D,
   useI18n as E,

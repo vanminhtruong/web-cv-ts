@@ -1,4 +1,4 @@
-import { H as defineStore, I as ref } from "./vendor-CCPa_ARj.js";
+import { H as defineStore, I as ref } from "./vendor-BFdtVDZL.js";
 const useThemeStore = defineStore("theme", () => {
   const darkThemes = [
     { id: "dark", name: "Dark Mode" },

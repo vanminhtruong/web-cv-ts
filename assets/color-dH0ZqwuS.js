@@ -1,4 +1,4 @@
-import { H as defineStore, I as ref } from "./vendor-CCPa_ARj.js";
+import { H as defineStore, I as ref } from "./vendor-BFdtVDZL.js";
 const useColorStore = defineStore("color", () => {
   const colors = [
     { id: "indigo", name: "Indigo", primary: "#6366f1", secondary: "#818cf8", accent: "#4f46e5" },

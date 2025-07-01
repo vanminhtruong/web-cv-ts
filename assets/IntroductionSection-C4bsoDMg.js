@@ -1,8 +1,8 @@
-import { d as defineComponent, E as useI18n, b as createBlock, v as openBlock, w as withCtx, f as createBaseVNode, a as normalizeStyle, u as unref, t as toDisplayString } from "./vendor-CCPa_ARj.js";
-import { u as useColorStore } from "./color-DqxGBczO.js";
-import LazySection from "./LazySection-DihEJKFU.js";
-import "./index-Be3qnwu9.js";
-import "./vendor-toast-Fl43GEBD.js";
+import { d as defineComponent, E as useI18n, b as createBlock, v as openBlock, w as withCtx, f as createBaseVNode, a as normalizeStyle, u as unref, t as toDisplayString } from "./vendor-BFdtVDZL.js";
+import { u as useColorStore } from "./color-dH0ZqwuS.js";
+import LazySection from "./LazySection-CQ-JKqun.js";
+import "./index-CswnhC9z.js";
+import "./vendor-toast-BVu51o8f.js";
 const _hoisted_1 = { class: "flex items-center mb-10" };
 const _hoisted_2 = { class: "mr-4 hidden md:block" };
 const _hoisted_3 = { class: "text-lg text-gray-700 dark:text-gray-300 leading-relaxed" };

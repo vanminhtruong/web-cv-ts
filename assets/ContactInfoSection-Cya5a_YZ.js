@@ -1,5 +1,5 @@
-import { u as useColorStore } from "./color-DqxGBczO.js";
-import { d as defineComponent, E as useI18n, c as createElementBlock, v as openBlock, f as createBaseVNode, a as normalizeStyle, u as unref, t as toDisplayString, g as createTextVNode } from "./vendor-CCPa_ARj.js";
+import { u as useColorStore } from "./color-dH0ZqwuS.js";
+import { d as defineComponent, E as useI18n, c as createElementBlock, v as openBlock, f as createBaseVNode, a as normalizeStyle, u as unref, t as toDisplayString, g as createTextVNode } from "./vendor-BFdtVDZL.js";
 const _hoisted_1 = { class: "flex items-center mb-6" };
 const _hoisted_2 = { class: "text-2xl font-semibold text-gray-900 dark:text-white" };
 const _hoisted_3 = { class: "space-y-6 mt-8" };
