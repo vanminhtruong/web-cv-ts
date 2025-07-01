@@ -43,14 +43,20 @@ export const useThemeStore = defineStore('theme', () => {
   }
   
   function updateThemeClass(): void {
-    const themeClasses = darkThemes.map(theme => `theme-${theme.id}`)
-    document.documentElement.classList.remove('dark', ...themeClasses)
-    
-    if (isDark.value) {
-      document.documentElement.classList.add('dark')
-      document.documentElement.classList.add(`theme-${currentDarkTheme.value}`)
-      console.log('Current theme:', currentDarkTheme.value)
-      console.log('Applied classes:', document.documentElement.className)
+    try {
+      // Lấy tất cả các theme class
+      const themeClasses = darkThemes.map(theme => `theme-${theme.id}`)
+      
+      // Xóa tất cả các theme class hiện tại
+      document.documentElement.classList.remove('dark', ...themeClasses)
+      
+      // Thêm class mới nếu đang ở dark mode
+      if (isDark.value) {
+        document.documentElement.classList.add('dark')
+        document.documentElement.classList.add(`theme-${currentDarkTheme.value}`)
+      }
+    } catch (error) {
+      console.error('Error updating theme class:', error)
     }
   }
   

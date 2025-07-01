@@ -20,7 +20,20 @@ export default defineConfig({
   },
   build: {
     assetsInlineLimit: 0, // Don't inline any assets
-    minify: false, // Disable minification completely for debugging
+    minify: 'terser', // Sử dụng terser thay vì esbuild
+    terserOptions: {
+      compress: {
+        // Tắt một số tối ưu hóa có thể gây ra lỗi
+        drop_console: false,
+        drop_debugger: false,
+        pure_funcs: []
+      },
+      mangle: {
+        // Giữ tên các thuộc tính của class
+        keep_classnames: true,
+        keep_fnames: true
+      }
+    },
     rollupOptions: {
       output: {
         manualChunks: (id) => {
