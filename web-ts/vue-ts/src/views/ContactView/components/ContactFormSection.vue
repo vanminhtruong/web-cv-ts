@@ -3,10 +3,12 @@ import { useColorStore } from '../../../stores/color'
 import { useToastStore } from '../../../stores/toast'
 import { useI18n } from 'vue-i18n'
 import { ref, reactive } from 'vue'
+import { useAssetPath } from '../../../composables/useAssetPath'
 
 const colorStore = useColorStore()
 const toastStore = useToastStore()
 const { t } = useI18n()
+const { getAssetPath } = useAssetPath()
 
 const formData = reactive({
   name: '',

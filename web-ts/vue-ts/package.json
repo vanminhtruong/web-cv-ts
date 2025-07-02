@@ -12,7 +12,7 @@
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
     "lint": "run-s lint:*",
-    "predeploy": "npm run build && powershell Copy-Item -Path 404.html -Destination dist/404.html && powershell New-Item -Path dist/assets -ItemType Directory -Force -ErrorAction SilentlyContinue && powershell Copy-Item -Path public/TruongVanMinh-CV.pdf -Destination dist/TruongVanMinh-CV.pdf -Force",
+    "predeploy": "npm run build && powershell Copy-Item -Path 404.html -Destination dist/404.html && powershell New-Item -Path dist/assets -ItemType Directory -Force -ErrorAction SilentlyContinue && powershell Copy-Item -Path public/TruongVanMinh-CV.pdf -Destination dist/TruongVanMinh-CV.pdf -Force && powershell Copy-Item -Path public/TruongVanMinh-CV.pdf -Destination dist/assets/TruongVanMinh-CV.pdf -Force",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

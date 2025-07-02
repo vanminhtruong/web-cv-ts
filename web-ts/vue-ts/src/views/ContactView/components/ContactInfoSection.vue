@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useColorStore } from '../../../stores/color'
 import { useI18n } from 'vue-i18n'
+import { useAssetPath } from '../../../composables/useAssetPath'
 
 const colorStore = useColorStore()
 const { t } = useI18n()
+const { getAssetPath } = useAssetPath()
 </script>
 
 <template>

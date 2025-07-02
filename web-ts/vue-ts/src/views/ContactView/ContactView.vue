@@ -2,6 +2,7 @@
 import { useColorStore } from '../../stores/color'
 import { useI18n } from 'vue-i18n'
 import { defineAsyncComponent } from 'vue'
+import { useAssetPath } from '../../composables/useAssetPath'
 
 // Import components with defineAsyncComponent
 const ContactInfoSection = defineAsyncComponent(() => import('./components/ContactInfoSection.vue'))
@@ -10,6 +11,7 @@ const LazySection = defineAsyncComponent(() => import('../../components/LazySect
 
 const colorStore = useColorStore()
 const { t } = useI18n()
+const { getAssetPath } = useAssetPath()
 </script>
 
 <template>
