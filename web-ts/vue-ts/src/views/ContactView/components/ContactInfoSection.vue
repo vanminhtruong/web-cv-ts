@@ -19,8 +19,8 @@ const { getAssetPath } = useAssetPath()
         <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.title') }}</h3>
       </div>
 
-      <div class="space-y-6 mt-8" style="border: 1px solid red">
-        <!-- <div class="bg-gradient-to-br from-white to-indigo-100 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-200 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
+      <!-- <div class="space-y-6 mt-8">
+        <div class="bg-gradient-to-br from-white to-indigo-100 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-200 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
           <div class="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -60,8 +60,8 @@ const { getAssetPath } = useAssetPath()
             <h4 class="text-lg font-medium text-gray-800 dark:text-white mb-1">{{ t('about.address') }}</h4>
             <p class="text-gray-700 dark:text-white">{{ t('about.addressValue') }}</p>
           </div>
-        </div> -->
-      </div>
+        </div>
+      </div> -->
 
       <!-- <div class="mt-10 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
         <div class="flex items-center mb-4">
