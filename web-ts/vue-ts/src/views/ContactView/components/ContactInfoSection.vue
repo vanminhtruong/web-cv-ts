@@ -10,7 +10,7 @@ const { getAssetPath } = useAssetPath()
 
 <template>
   <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 transform hover:-translate-y-1 border-l-4 h-full flex flex-col" :style="{ 'border-color': colorStore.currentColor.primary }">
-      <!-- <div class="flex items-center mb-6">
+      <div class="flex items-center mb-6">
         <div class="h-10 w-10 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -19,7 +19,7 @@ const { getAssetPath } = useAssetPath()
         <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.title') }}</h3>
       </div>
 
-      <div class="space-y-6 mt-8">
+      <!-- <div class="space-y-6 mt-8">
         <div class="bg-gradient-to-br from-white to-indigo-100 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-200 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
           <div class="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,9 +61,9 @@ const { getAssetPath } = useAssetPath()
             <p class="text-gray-700 dark:text-white">{{ t('about.addressValue') }}</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="mt-10 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
+      <!-- <div class="mt-10 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
         <div class="flex items-center mb-4">
           <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,6 +105,5 @@ const { getAssetPath } = useAssetPath()
           </a>
         </div>
       </div> -->
-      <h1>Khen anh đẹp xinh</h1>
-    </div>
+  </div>
 </template>
