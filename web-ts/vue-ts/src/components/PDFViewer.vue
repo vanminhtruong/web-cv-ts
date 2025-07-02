@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isOpen" class="pdf-viewer-modal" @click.self="closeModal">
+  <div v-if="isOpen" class="pdf-viewer-modal">
     <div class="pdf-viewer-container">
       <div class="pdf-viewer-header" :style="{ 'background-color': colorStore.currentColor.primary }">
         <h3 class="text-xl font-bold">{{ title }}</h3>
