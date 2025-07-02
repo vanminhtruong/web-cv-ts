@@ -19,7 +19,7 @@ const { getAssetPath } = useAssetPath()
         <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ t('contact.title') }}</h3>
       </div>
 
-      <!-- <div class="space-y-6 mt-8">
+      <div class="space-y-6 mt-8">
         <div class="bg-gradient-to-br from-white to-indigo-100 dark:from-gray-700 dark:to-gray-600 p-5 rounded-lg shadow-sm border border-indigo-200 dark:border-gray-600 flex items-start space-x-4 transform transition-all duration-300 hover:-translate-y-1">
           <div class="h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +61,7 @@ const { getAssetPath } = useAssetPath()
             <p class="text-gray-700 dark:text-white">{{ t('about.addressValue') }}</p>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- <div class="mt-10 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
         <div class="flex items-center mb-4">
