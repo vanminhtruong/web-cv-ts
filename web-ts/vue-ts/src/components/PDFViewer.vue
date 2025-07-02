@@ -2,7 +2,7 @@
   <div v-if="isOpen" class="pdf-viewer-modal">
     <div class="pdf-viewer-container">
       <div class="pdf-viewer-header" :style="{ 'background-color': colorStore.currentColor.primary }">
-        <h3 class="text-xl font-bold">{{ title }}</h3>
+        <h3 class="text-xl font-bold flex items-center gap-2">{{ title }} <span class="wave-hand text-2xl">👋</span></h3>
         <div class="flex items-center gap-4">
           <div class="zoom-controls flex items-center gap-2">
             <button class="zoom-button" @click="zoomOut" title="Zoom out">
@@ -92,11 +92,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref } from 'vue';
+import { defineProps, defineEmits, ref, watch, onBeforeUnmount } from 'vue';
 import { useColorStore } from '../stores/color';
 
 const colorStore = useColorStore();
-const zoomLevel = ref(1.0); // Default zoom to 100%
+const zoomLevel = ref(1.0); 
 const pdfContainer = ref<HTMLElement | null>(null);
 const pdfFrame = ref<HTMLIFrameElement | null>(null);
 const isFullScreen = ref(false);
@@ -118,6 +118,30 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close']);
+
+// Store original body overflow to restore later
+const originalOverflow = ref<string>(document.body.style.overflow);
+
+// Watch for modal visibility changes to toggle page scrolling
+watch(
+  () => props.isOpen,
+  (isOpen) => {
+    if (isOpen) {
+      // Save current overflow setting and disable scroll
+      originalOverflow.value = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore previous overflow setting
+      document.body.style.overflow = originalOverflow.value || '';
+    }
+  },
+  { immediate: true }
+);
+
+// Ensure overflow is restored when component is unmounted
+onBeforeUnmount(() => {
+  document.body.style.overflow = originalOverflow.value || '';
+});
 
 const closeModal = () => {
   emit('close');
@@ -294,6 +318,23 @@ document.addEventListener('fullscreenchange', () => {
   padding: 2rem;
   max-width: 500px;
   color: #333;
+}
+
+/* Waving hand icon animation */
+.wave-hand {
+  display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @media (max-width: 768px) {
