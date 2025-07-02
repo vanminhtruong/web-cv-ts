@@ -31,7 +31,7 @@ const { getAssetPath } = useAssetPath()
 
         <div class="flex flex-col md:flex-row gap-8 h-full">
           <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
-            <ContactInfoSection />
+            <h1>Học giỏi</h1>
           </LazySection>
           <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
             <ContactFormSection />
