@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 interface SocialLinks {
@@ -16,7 +16,10 @@ export const useProfileStore = defineStore('profile', () => {
   const year = ref<number>(new Date().getFullYear())
   
   // Đường dẫn đến file CV
-  const cvPath = ref<string>('/src/assets/file/TruongVanMinh-CV.pdf')
+  const cvPath = computed(() => {
+    const isGitHubPages = window.location.href.includes('/web-cv-ts/');
+    return isGitHubPages ? '/web-cv-ts/TruongVanMinh-CV.pdf' : '/TruongVanMinh-CV.pdf';
+  })
   
   // Thông tin liên hệ
   const socialLinks = ref<SocialLinks>({

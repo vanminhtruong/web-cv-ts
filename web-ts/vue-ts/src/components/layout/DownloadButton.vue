@@ -19,10 +19,10 @@ const colorStore = useColorStore()
 
 // Xác định đúng đường dẫn tùy thuộc vào môi trường triển khai
 const pdfPath = computed(() => {
-  // Kiểm tra xem có phải đang trên GitHub Pages không (có base path /web-cv/)
-  const isGitHubPages = window.location.href.includes('/web-cv/');
+  // Kiểm tra xem có phải đang trên GitHub Pages không (có base path /web-cv-ts/)
+  const isGitHubPages = window.location.href.includes('/web-cv-ts/');
   // Nếu đang ở GitHub Pages, sử dụng đường dẫn tương đối với base path
-  return isGitHubPages ? '/web-cv/TruongVanMinh-CV.pdf' : '/TruongVanMinh-CV.pdf';
+  return isGitHubPages ? '/web-cv-ts/TruongVanMinh-CV.pdf' : '/TruongVanMinh-CV.pdf';
 })
 </script>
 
