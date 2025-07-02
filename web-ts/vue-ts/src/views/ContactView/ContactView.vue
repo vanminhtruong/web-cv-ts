@@ -4,8 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { defineAsyncComponent } from 'vue'
 import { useAssetPath } from '../../composables/useAssetPath'
 
-// Import components with defineAsyncComponent
-const ContactInfoSection = defineAsyncComponent(() => import('./components/ContactInfoSection.vue'))
+// const ContactInfoSection = defineAsyncComponent(() => import('./components/ContactInfoSection.vue'))
 const ContactFormSection = defineAsyncComponent(() => import('./components/ContactFormSection.vue'))
 const LazySection = defineAsyncComponent(() => import('../../components/LazySection.vue'))
 
@@ -30,9 +29,10 @@ const { getAssetPath } = useAssetPath()
         </div>
 
         <div class="flex flex-col md:flex-row gap-8 h-full">
-          <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
-            <h1>Hello Minh</h1>
-          </LazySection>
+          <!-- <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
+            
+          </LazySection> -->
+          <h1 class="text-green-500">Hello Minh</h1>
           <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
             <ContactFormSection />
           </LazySection>
