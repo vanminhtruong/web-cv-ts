@@ -33,6 +33,7 @@ const { getAssetPath } = useAssetPath()
             
           </LazySection> -->
           <h1 class="text-green-500">Hello Minh</h1>
+          <h2>Ngu học</h2>
           <LazySection class="w-full md:w-1/2" threshold="0.1" rootMargin="50px">
             <ContactFormSection />
           </LazySection>
