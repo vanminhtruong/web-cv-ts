@@ -20,7 +20,8 @@ export default defineConfig({
   },
   build: {
     assetsInlineLimit: 0, // Don't inline any assets
-    minify: 'terser', // Sử dụng terser thay vì esbuild
+    minify: false, // Không sử dụng minify để tránh lỗi JavaScript
+    sourcemap: true, // Thêm sourcemap để dễ debug
     terserOptions: {
       compress: {
         // Tắt một số tối ưu hóa có thể gây ra lỗi

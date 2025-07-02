@@ -17,13 +17,20 @@ export function useAssetPath() {
    * @returns Đường dẫn đầy đủ phù hợp với môi trường
    */
   const getAssetPath = (path: string): string => {
+    // Nếu đường dẫn đã là URL đầy đủ, trả về nguyên vẹn
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      return path
+    }
+    
     // Đảm bảo path bắt đầu bằng dấu /
     const normalizedPath = path.startsWith('/') ? path : `/${path}`
     
     // Nếu đang ở GitHub Pages, thêm base path
-    return isGitHubPages.value 
-      ? `/web-cv-ts${normalizedPath}` 
-      : normalizedPath
+    if (isGitHubPages.value) {
+      return `/web-cv-ts${normalizedPath}`
+    }
+    
+    return normalizedPath
   }
 
   return {
