@@ -17,6 +17,11 @@
               </svg>
             </button>
           </div>
+          <button class="reset-zoom-button" @click="resetZoom" title="Reset zoom">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </button>
           <button class="zoom-button" @click="toggleFullScreen" title="Fullscreen">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path v-if="!isFullScreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
@@ -159,6 +164,10 @@ const zoomOut = () => {
   }
 };
 
+const resetZoom = () => {
+  zoomLevel.value = 1.0;
+};
+
 const toggleFullScreen = () => {
   if (!document.fullscreenElement) {
     if (pdfFrame.value?.requestFullscreen) {
@@ -262,6 +271,21 @@ document.addEventListener('fullscreenchange', () => {
 
 .zoom-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.reset-zoom-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.reset-zoom-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .close-button {
