@@ -14,7 +14,6 @@ import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
 
-// Khởi tạo theme trước khi mount app
 const savedTheme = localStorage.getItem('theme') || 'light'
 if (savedTheme !== 'light') {
   document.documentElement.classList.add('dark')
