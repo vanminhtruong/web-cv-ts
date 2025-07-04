@@ -12,7 +12,31 @@
                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
               </svg>
             </span>
-            <span>Trương Văn Minh</span>
+            <span class="flex overflow-visible items-baseline min-h-[1.5em] py-1">
+              <span 
+                v-for="(letter, index) in letters" 
+                :key="index"
+                class="inline-block transform transition-all duration-300 ease-out"
+                :class="[
+                  animatedLetters[index] ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0',
+                  'hover:animate-bounce',
+                  letter === ' ' ? 'mr-[0.15em]' : '',
+                  letter !== ' ' ? 'mr-[0.02em]' : '',
+                  letter === 'h' ? '-translate-y-[0.001em]' : '',
+                  letter === 'g' ? 'leading-[1.2]' : ''
+                ]"
+                :style="{ 
+                  'transition-delay': `${index * 100}ms`,
+                  'animation-delay': `${index * 50}ms`,
+                  'transition-property': 'transform, opacity',
+                  'transform-origin': 'center',
+                  'line-height': letter === 'g' ? '1.2' : '1',
+                  'vertical-align': 'baseline'
+                }"
+              >
+                {{ letter === ' ' ? '\u00A0' : letter }}
+              </span>
+            </span>
           </RouterLink>
         </div>
         
@@ -70,6 +94,8 @@ import MobileMenu from './MobileMenu.vue'
 import { useHeader } from '../../composables/useHeader'
 import { useNavigation } from '../../composables/useNavigation'
 import { useHeaderStyles } from '../../composables/useHeaderStyles'
+import { useLetterAnimation } from '../../composables/useLetterAnimation'
+import { onMounted } from 'vue'
 
 const {
   isMobileMenuOpen,
@@ -89,6 +115,16 @@ const {
   colorStore,
   primaryColor
 } = useHeaderStyles()
+
+const {
+  letters,
+  animatedLetters,
+  initializeAnimation
+} = useLetterAnimation()
+
+onMounted(() => {
+  initializeAnimation('Trương Văn Minh')
+})
 
 // Add named export
 defineExpose({
@@ -134,5 +170,33 @@ defineExpose({
 .scroll-progress-bar {
   height: 100%;
   transition: width 0.1s ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) translateY(-0.05em);
+    vertical-align: baseline;
+  }
+  50% {
+    transform: translateY(-25%) translateY(-0.05em);
+    vertical-align: baseline;
+  }
+}
+
+.hover\:animate-bounce:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* Ensure consistent baseline alignment */
+.transform {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  vertical-align: baseline;
+}
+
+/* Ensure container has enough space for descenders */
+.flex {
+  margin-bottom: 0.1em;
 }
 </style>

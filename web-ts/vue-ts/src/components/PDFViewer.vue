@@ -1,62 +1,109 @@
 <template>
-  <div v-if="isOpen" class="pdf-viewer-modal">
-    <div class="pdf-viewer-container">
-      <div class="pdf-viewer-header" :style="{ 'background-color': colorStore.currentColor.primary }">
-        <h3 class="xs:text-base text-xl font-bold flex items-center gap-2">{{ title }} <span class="wave-hand xs:text-xl text-2xl">👋</span></h3>
-        <div class="flex items-center xs:gap-2 gap-4">
-          <div class="zoom-controls flex items-center xs:gap-1 gap-2">
-            <button class="zoom-button" @click="zoomOut" title="Zoom out">
-              <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
-              </svg>
-            </button>
-            <span class="zoom-level xs:text-xs">{{ Math.round(zoomLevel * 100) }}%</span>
-            <button class="zoom-button" @click="zoomIn" title="Zoom in">
-              <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-              </svg>
-            </button>
+  <Transition name="modal-fade">
+    <div v-if="isOpen" class="pdf-viewer-modal">
+      <Transition name="modal-content">
+        <div class="pdf-viewer-container">
+          <div class="pdf-viewer-header" :style="{ 'background-color': colorStore.currentColor.primary }">
+            <h3 class="xs:text-base text-xl font-bold flex items-center gap-2">{{ title }} <span class="wave-hand xs:text-xl text-2xl">👋</span></h3>
+            <div class="flex items-center xs:gap-2 gap-4">
+              <div class="zoom-controls flex items-center xs:gap-1 gap-2">
+                <button class="zoom-button" @click="zoomOut" title="Zoom out">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                  </svg>
+                </button>
+                <span class="zoom-level xs:text-xs">{{ Math.round(zoomLevel * 100) }}%</span>
+                <button class="zoom-button" @click="zoomIn" title="Zoom in">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                </button>
+              </div>
+              <button class="reset-zoom-button" @click="resetZoom" title="Reset zoom">
+                <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </button>
+              <button class="zoom-button" @click="toggleFullScreen" title="Fullscreen">
+                <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path v-if="!isFullScreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
+                  <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <a 
+                :href="pdfUrl" 
+                target="_blank" 
+                class="download-button flex items-center gap-1 px-2 py-1 rounded-md bg-white/20 hover:bg-white/30 transition-colors xs:hidden" 
+                title="Open in new tab"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                <span class="text-sm">Open</span>
+              </a>
+              <button class="close-button" @click="closeModal">
+                <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
-          <button class="reset-zoom-button" @click="resetZoom" title="Reset zoom">
-            <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-          </button>
-          <button class="zoom-button" @click="toggleFullScreen" title="Fullscreen">
-            <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path v-if="!isFullScreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
-              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <a 
-            :href="pdfUrl" 
-            target="_blank" 
-            class="download-button flex items-center gap-1 px-2 py-1 rounded-md bg-white/20 hover:bg-white/30 transition-colors xs:hidden" 
-            title="Open in new tab"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            <span class="text-sm">Open</span>
-          </a>
-          <button class="close-button" @click="closeModal">
-            <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="pdf-viewer-content" ref="pdfContainer">
-        <div v-if="!pdfLoadError" class="pdf-wrapper">
-          <object 
-            v-if="isXsScreen"
-            :data="pdfUrl" 
-            type="application/pdf" 
-            class="pdf-object"
-            width="100%"
-            height="100%"
-          >
-            <div class="pdf-fallback">
+          <div class="pdf-viewer-content" ref="pdfContainer">
+            <div v-if="!pdfLoadError" class="pdf-wrapper">
+              <object 
+                v-if="isXsScreen"
+                :data="pdfUrl" 
+                type="application/pdf" 
+                class="pdf-object"
+                width="100%"
+                height="100%"
+              >
+                <div class="pdf-fallback">
+                  <div class="pdf-error-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-12 xs:w-12 h-16 w-16 mb-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <h3 class="xs:text-lg text-xl font-bold mb-2">PDF không thể hiển thị trực tiếp</h3>
+                    <p class="mb-4 xs:text-sm">Vui lòng sử dụng nút tải CV hoặc mở trong tab mới</p>
+                    <div class="flex xs:flex-col sm:flex-row justify-center xs:gap-2 gap-4">
+                      <a 
+                        :href="pdfUrl" 
+                        download 
+                        class="inline-flex items-center xs:text-sm xs:px-3 px-4 py-2 rounded-md"
+                        :style="{ 'background-color': colorStore.currentColor.primary, color: 'white' }"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Tải CV
+                      </a>
+                      <a 
+                        :href="pdfUrl" 
+                        target="_blank" 
+                        class="inline-flex items-center xs:text-sm xs:px-3 px-4 py-2 border-2 rounded-md"
+                        :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Mở trong tab mới
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </object>
+              <iframe 
+                v-else
+                ref="pdfFrame"
+                :src="pdfUrl" 
+                frameborder="0" 
+                :style="{ transform: `scale(${zoomLevel})`, transformOrigin: 'top center' }"
+                allow="fullscreen"
+                @load="handleIframeLoad"
+                @error="handleIframeError"
+              ></iframe>
+            </div>
+            <div v-else class="pdf-fallback">
               <div class="pdf-error-message">
                 <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-12 xs:w-12 h-16 w-16 mb-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -89,54 +136,11 @@
                 </div>
               </div>
             </div>
-          </object>
-          <iframe 
-            v-else
-            ref="pdfFrame"
-            :src="pdfUrl" 
-            frameborder="0" 
-            :style="{ transform: `scale(${zoomLevel})`, transformOrigin: 'top center' }"
-            allow="fullscreen"
-            @load="handleIframeLoad"
-            @error="handleIframeError"
-          ></iframe>
-        </div>
-        <div v-else class="pdf-fallback">
-          <div class="pdf-error-message">
-            <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-12 xs:w-12 h-16 w-16 mb-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-            <h3 class="xs:text-lg text-xl font-bold mb-2">PDF không thể hiển thị trực tiếp</h3>
-            <p class="mb-4 xs:text-sm">Vui lòng sử dụng nút tải CV hoặc mở trong tab mới</p>
-            <div class="flex xs:flex-col sm:flex-row justify-center xs:gap-2 gap-4">
-              <a 
-                :href="pdfUrl" 
-                download 
-                class="inline-flex items-center xs:text-sm xs:px-3 px-4 py-2 rounded-md"
-                :style="{ 'background-color': colorStore.currentColor.primary, color: 'white' }"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Tải CV
-              </a>
-              <a 
-                :href="pdfUrl" 
-                target="_blank" 
-                class="inline-flex items-center xs:text-sm xs:px-3 px-4 py-2 border-2 rounded-md"
-                :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                Mở trong tab mới
-              </a>
-            </div>
           </div>
         </div>
-      </div>
+      </Transition>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -260,6 +264,29 @@ document.addEventListener('fullscreenchange', () => {
 </script>
 
 <style scoped>
+/* Modal fade animation */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+/* Modal content animation */
+.modal-content-enter-active,
+.modal-content-leave-active {
+  transition: all 0.3s ease;
+}
+
+.modal-content-enter-from,
+.modal-content-leave-to {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
 .pdf-viewer-modal {
   position: fixed;
   top: 0;
@@ -272,6 +299,10 @@ document.addEventListener('fullscreenchange', () => {
   justify-content: center;
   z-index: 1000;
   padding: 0.5rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .pdf-viewer-container {
