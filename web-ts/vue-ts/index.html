@@ -5,6 +5,55 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
+    <style>
+      html {
+        visibility: hidden;
+      }
+      html.theme-initialized {
+        visibility: visible;
+      }
+      html.dark.theme-dark {
+        background-color: rgb(17, 24, 39); 
+        color: white;
+      }
+      html.dark.theme-black {
+        background-color: rgb(0, 0, 0);
+        color: white;
+      }
+      html.dark.theme-navy {
+        background-color: rgb(0, 27, 66);
+        color: white;
+      }
+      html.dark.theme-charcoal {
+        background-color: rgb(36, 37, 38);
+        color: white;
+      }
+      html.dark.theme-midnight {
+        background-color: rgb(25, 25, 112);
+        color: white;
+      }
+      html.dark.theme-deep-purple {
+        background-color: rgb(48, 25, 52);
+        color: white;
+      }
+    </style>
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('theme') || 'light';
+          if (theme !== 'light') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.add(`theme-${theme}`);
+          }
+          requestAnimationFrame(() => {
+            document.documentElement.classList.add('theme-initialized');
+          });
+        } catch (e) {
+          console.error('Theme initialization error:', e);
+          document.documentElement.classList.add('theme-initialized');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

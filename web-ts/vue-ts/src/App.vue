@@ -7,7 +7,7 @@ const MainLayout = defineAsyncComponent(() => import('./components/layout/MainLa
 
 <template>
   <MainLayout>
-  <RouterView />
+    <RouterView />
   </MainLayout>
 </template>
 
