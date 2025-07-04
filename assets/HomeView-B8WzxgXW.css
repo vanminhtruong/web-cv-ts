@@ -1,0 +1,11 @@
+
+.lazy-hidden[data-v-997159f7] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.lazy-visible[data-v-997159f7] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}

@@ -1,0 +1,175 @@
+
+.icon-container[data-v-16263b20] {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiệu ứng chung */
+.icon-animate[data-v-16263b20] {
+  animation: pulse-16263b20 2s infinite;
+}
+
+/* Hiệu ứng cho icon briefcase */
+.briefcase-container[data-v-16263b20] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+.briefcase-animate[data-v-16263b20] {
+  animation: pulse-16263b20 3s ease-in-out infinite;
+}
+
+/* Hiệu ứng cho icon email */
+.email-animate[data-v-16263b20] {
+  animation: bounce-16263b20 2s infinite;
+}
+
+/* Hiệu ứng cho icon điện thoại */
+.phone-animate[data-v-16263b20] {
+  animation: shake-16263b20 1.5s infinite;
+}
+
+/* Hiệu ứng cho icon github */
+.github-animate[data-v-16263b20] {
+  animation: rotate-16263b20 3s infinite;
+}
+
+/* Hiệu ứng cho icon địa chỉ */
+.address-animate[data-v-16263b20] {
+  animation: pulse-location-16263b20 2s infinite;
+}
+
+/* Hiệu ứng cho icon tải xuống */
+.download-animate[data-v-16263b20] {
+  animation: download-motion-16263b20 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Hiệu ứng cho icon chấm than */
+.exclamation-animate[data-v-16263b20] {
+  animation: pulse-16263b20 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px currentColor);
+  transition: transform 0.2s;
+}
+.exclamation-mark:hover .exclamation-animate[data-v-16263b20] {
+  transform: scale(1.2);
+}
+
+/* Định nghĩa các keyframes */
+@keyframes pulse-16263b20 {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+100% {
+    transform: scale(1);
+}
+}
+@keyframes bounce-16263b20 {
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+}
+40% {
+    transform: translateY(-6px);
+}
+60% {
+    transform: translateY(-3px);
+}
+}
+@keyframes shake-16263b20 {
+0% {
+    transform: rotate(0deg);
+}
+10% {
+    transform: rotate(-10deg);
+}
+20% {
+    transform: rotate(10deg);
+}
+30% {
+    transform: rotate(-10deg);
+}
+40% {
+    transform: rotate(10deg);
+}
+50% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+@keyframes rotate-16263b20 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+@keyframes pulse-location-16263b20 {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 3px currentColor);
+}
+100% {
+    transform: scale(1);
+}
+}
+@keyframes download-motion-16263b20 {
+0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0px currentColor);
+}
+50% {
+    transform: translateY(2px);
+    filter: drop-shadow(0 0 1px currentColor);
+}
+100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0px currentColor);
+}
+}
+@media (min-width: 768px) and (max-width: 1270px) {
+.wrapper[data-v-16263b20]{
+    display: block;
+}
+.groups[data-v-16263b20]{
+    width: 100%;
+}
+.avatar[data-v-16263b20]{
+    margin: 0 auto;
+    margin-top: 25px;
+    order: 2;
+}
+}
+.typing-cursor[data-v-16263b20] {
+  display: inline-block;
+  width: 3px;
+  animation: blink-16263b20 0.7s infinite;
+  color: var(--theme-primary);
+}
+@keyframes blink-16263b20 {
+0% { opacity: 1;
+}
+50% { opacity: 0;
+}
+100% { opacity: 1;
+}
+}
+.typing-effect[data-v-16263b20] {
+  display: inline-block;
+  font-weight: bold;
+}
+.dark .typing-cursor[data-v-16263b20] {
+  color: var(--theme-secondary);
+}
