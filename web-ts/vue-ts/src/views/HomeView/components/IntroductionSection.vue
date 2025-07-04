@@ -17,10 +17,10 @@ const colorStore = useColorStore()
           </svg>
         </div>
       </div>
-      <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('about.title').toUpperCase() }}</h2>
+      <h2 class="xs:text-2xl text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('about.title').toUpperCase() }}</h2>
     </div>
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 mb-6 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 xs:p-5 mb-6 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
+      <p class="xs:text-base text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
         {{ t('about.content') }}
       </p>
     </div>

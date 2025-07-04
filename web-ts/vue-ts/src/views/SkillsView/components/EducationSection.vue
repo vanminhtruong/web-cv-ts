@@ -17,10 +17,10 @@ const { t } = useI18n()
           </svg>
         </div>
       </div>
-      <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }">{{ t('education.title').toUpperCase() }}</h2>
+      <h2 class="xs:text-2xl text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'border-color': colorStore.currentColor.primary, 'color': colorStore.currentColor.primary }">{{ t('education.title').toUpperCase() }}</h2>
     </div>
     
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 mb-8 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 xs:p-4 mb-8 transform hover:-translate-y-1 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
       <div class="flex flex-col md:flex-row justify-between items-start mb-6">
         <div class="flex items-start">
           <div class="h-12 w-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0" :style="{ 'background-color': colorStore.currentColor.primary }">
@@ -31,46 +31,46 @@ const { t } = useI18n()
             </svg>
           </div>
           <div>
-            <h3 class="text-xl font-bold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('education.schoolName') }}</h3>
-            <p class="text-lg font-medium mt-1" :style="{ 'color': colorStore.currentColor.primary }">{{ t('education.major') }}</p>
-            <div class="text-gray-600 dark:text-gray-400 mt-1">{{ t('education.location') }}</div>
+            <h3 class="xs:text-lg text-xl font-bold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('education.schoolName') }}</h3>
+            <p class="xs:text-base text-lg font-medium mt-1" :style="{ 'color': colorStore.currentColor.primary }">{{ t('education.major') }}</p>
+            <div class="text-gray-600 dark:text-gray-400 mt-1 xs:text-sm">{{ t('education.location') }}</div>
           </div>
         </div>
-        <div class="flex items-center font-medium mt-4 md:mt-0 px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="flex items-center font-medium mt-4 md:mt-0 px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-white xs:text-xs" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
+          <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-3 xs:w-3 h-5 w-5 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
           <span class="font-medium">{{ t('education.period') }}</span>
         </div>
       </div>
       
-      <div class="ml-16 mt-6 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
+      <div class="ml-16 mt-6 bg-white dark:bg-gray-700 p-5 xs:p-3 rounded-lg shadow-sm border dark:border-gray-600" :style="{ 'border-color': colorStore.currentColor.secondary }">
         <div class="flex items-center mb-4">
           <div class="h-8 w-8 rounded-lg flex items-center justify-center mr-3" :style="{ 'background-color': colorStore.currentColor.primary }">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           </div>
-          <h4 class="text-lg font-semibold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('education.degree') }}</h4>
+          <h4 class="xs:text-base text-lg font-semibold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('education.degree') }}</h4>
         </div>
         <ul class="ml-11 space-y-2">
           <li class="flex items-start">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
-            <span>{{ t('skills.course1') }}</span>
+            <span class="xs:text-sm">{{ t('skills.course1') }}</span>
           </li>
           <li class="flex items-start">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
-            <span>{{ t('skills.course2') }}</span>
+            <span class="xs:text-sm">{{ t('skills.course2') }}</span>
           </li>
           <li class="flex items-start">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
             </svg>
-            <span>{{ t('skills.course3') }}</span>
+            <span class="xs:text-sm">{{ t('skills.course3') }}</span>
           </li>
         </ul>
       </div>

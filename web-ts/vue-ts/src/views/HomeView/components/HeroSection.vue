@@ -60,23 +60,23 @@ const pdfPath = computed((): string => {
   <div>
     <div class="wrapper flex flex-col lg:flex-col xl:flex-row items-center justify-between mb-16 gap-4 lg:gap-8">
       <div class="avatar xl:w-1/3 flex justify-center transform transition-all duration-500 hover:scale-105 mt-8 lg:mt-0">
-        <div class="relative w-64 h-64 lg:w-80 lg:h-80">
+        <div class="relative xs:w-48 xs:h-48 w-64 h-64 lg:w-80 lg:h-80">
           <div class="absolute inset-0 rounded-full shadow-lg" :style="{ 'background-image': `linear-gradient(to bottom right, ${colorStore.currentColor.primary}20, ${colorStore.currentColor.secondary}20)` }"></div>
           <div class="absolute inset-4 rounded-full shadow-inner" :style="{ 'background-image': `linear-gradient(to top right, ${colorStore.currentColor.primary}30, ${colorStore.currentColor.secondary}30)` }"></div>
-          <div class="absolute inset-8 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
+          <div class="absolute inset-8 rounded-full flex items-center justify-center text-white xs:text-2xl text-4xl font-bold shadow-xl" :style="{ 'background-color': colorStore.currentColor.primary }">
             {{ t('home.avatar') }}
           </div>
         </div>  
       </div>
       <div class="tablet:w-full lg:w-full xl:w-2/3 p-4 transform transition-all duration-300 hover:-translate-y-1">
-        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 class="xs:text-3xl text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           <span class="block">{{ t('home.greeting') }}</span>
           <span class="block transform transition-all duration-300 hover:scale-105" :style="{ color: colorStore.currentColor.primary }">
             <span class="typing-effect">{{ displayedName }}</span>
             <span class="typing-cursor" :style="{ color: colorStore.currentColor.primary }">|</span>
           </span>
         </h1>
-        <h2 class="text-2xl text-gray-700 dark:text-gray-300 mb-6 flex items-center">
+        <h2 class="xs:text-xl text-2xl text-gray-700 dark:text-gray-300 mb-6 flex items-center">
           <div class="briefcase-container mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 dark:text-white briefcase-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.primary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -114,15 +114,15 @@ const pdfPath = computed((): string => {
             </div>
             <div class="flex-1 min-w-0">
               <div class="text-sm font-medium text-gray-500">{{ item.label }}</div>
-              <div v-if="!item.url" class="font-medium truncate">{{ item.value }}</div>
-              <a v-else :href="item.url" class="font-medium transition-colors" :style="{ color: colorStore.currentColor.primary }" :class="{ 'hover:opacity-80': true }">github.com/{{ item.value }}</a>
+              <div v-if="!item.url" class="font-medium truncate xs:text-sm">{{ item.value }}</div>
+              <a v-else :href="item.url" class="font-medium transition-colors xs:text-sm" :style="{ color: colorStore.currentColor.primary }" :class="{ 'hover:opacity-80': true }">github.com/{{ item.value }}</a>
             </div>
           </div>
         </div>
         <div class="flex flex-wrap gap-3">
           <a v-for="button in primaryButtons" :key="button.id"
              :href="button.href" 
-             class="inline-flex items-center px-6 py-3 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg" 
+             class="inline-flex items-center xs:px-4 px-6 xs:py-2 py-3 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg xs:text-sm" 
              :style="{ 'background-color': colorStore.currentColor.primary }" 
              :class="{ 'hover:opacity-90': true }">
             {{ button.label }}
@@ -130,10 +130,10 @@ const pdfPath = computed((): string => {
           <a v-for="button in secondaryButtons" :key="button.id"
              :href="button.href" 
              download 
-             class="inline-flex items-center px-6 py-3 border-2 font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg ml-4"
+             class="inline-flex items-center xs:px-4 px-6 xs:py-2 py-3 border-2 font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg xs:ml-2 ml-4 xs:text-sm"
              :style="{ 'border-color': colorStore.currentColor.secondary, 'color': colorStore.currentColor.secondary }"
              :class="{ 'hover:bg-gray-50 dark:hover:bg-gray-800': true }">
-            <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 download-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
+            <svg v-if="button.icon" xmlns="http://www.w3.org/2000/svg" class="xs:h-4 xs:w-4 h-5 w-5 mr-2 download-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor" :style="{ 'color': colorStore.currentColor.secondary }">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="button.icon" />
             </svg>
             {{ button.label }}

@@ -17,7 +17,7 @@ const { t } = useI18n()
           </svg>
         </div>
       </div>
-      <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('experience.title').toUpperCase() }}</h2>
+      <h2 class="xs:text-2xl text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('experience.title').toUpperCase() }}</h2>
     </div>
 
     <div class="relative">
@@ -34,18 +34,18 @@ const { t } = useI18n()
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <div class="text-white font-medium text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="text-white font-medium xs:text-xs text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.primary}, ${colorStore.currentColor.secondary})` }">
+              <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-3 xs:w-3 h-4 w-4 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               {{ t('experience.date1') }}
             </div>
           </div>
           <div class="flex-1 md:w-[45%] md:pr-8 md:text-right order-2 md:order-1 transition-all duration-300 transform hover:-translate-y-1 mt-6 md:mt-0">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
+            <div class="bg-white dark:bg-gray-800 p-6 xs:p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4" :style="{ 'border-color': colorStore.currentColor.primary }">
               <div class="flex flex-col">
-                <span class="text-xs font-semibold uppercase tracking-wider mb-1" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.date1') }}</span>
-                <h3 class="text-xl font-bold mb-2" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.company1') }}</h3>
+                <span class="xs:text-xs text-xs font-semibold uppercase tracking-wider mb-1" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.date1') }}</span>
+                <h3 class="xs:text-lg text-xl font-bold mb-2" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.company1') }}</h3>
                 <p class="font-medium mb-4 flex items-center" :style="{ 'color': colorStore.currentColor.primary }">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -54,7 +54,7 @@ const { t } = useI18n()
                 </p>
               </div>
               <div class="pl-2 border-l-2 border-opacity-30" :style="{ 'border-color': colorStore.currentColor.secondary }">
-                <h4 class="text-lg font-semibold mb-2 flex items-center" :style="{ 'color': colorStore.currentColor.primary }">
+                <h4 class="xs:text-base text-lg font-semibold mb-2 flex items-center" :style="{ 'color': colorStore.currentColor.primary }">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" :style="{ 'color': colorStore.currentColor.primary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -65,31 +65,31 @@ const { t } = useI18n()
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility1') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility1') }}</span>
                   </li>
                   <li class="flex items-start">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility2') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility2') }}</span>
                   </li>
                   <li class="flex items-start">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility3') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility3') }}</span>
                   </li>
                   <li class="flex items-start">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility2') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility2') }}</span>
                   </li>
                   <li class="flex items-start">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility3') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility3') }}</span>
                   </li>
                 </ul>
               </div>
@@ -122,8 +122,8 @@ const { t } = useI18n()
           </div>
           <!-- Ngày tháng mobile (chỉ hiển thị trên mobile) -->
           <div  class="md:hidden w-full mb-8 px-4 absolute top-0 left-0 right-0 z-20">
-            <div class="ml-[43px] text-white font-medium text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.secondary}, ${colorStore.currentColor.primary})` }">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="ml-[43px] text-white font-medium xs:text-xs text-sm uppercase tracking-wider px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center" :style="{ 'background-image': `linear-gradient(to right, ${colorStore.currentColor.secondary}, ${colorStore.currentColor.primary})` }">
+              <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-3 xs:w-3 h-4 w-4 mr-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               {{ t('experience.date2') }}
@@ -154,10 +154,10 @@ const { t } = useI18n()
           </div>
 
           <div class="flex-1 md:w-[45%] md:pl-8 order-3 transition-all duration-300 transform hover:-translate-y-1 mt-4">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-r-4" :style="{ 'border-color': colorStore.currentColor.secondary }">
+            <div class="bg-white dark:bg-gray-800 p-6 xs:p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-r-4" :style="{ 'border-color': colorStore.currentColor.secondary }">
               <div class="flex flex-col">
-                <span class="text-xs font-semibold uppercase tracking-wider mb-3" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.position2') }}</span>
-                <h3 class="text-2xl font-bold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.company2') }}</h3>
+                <span class="xs:text-xs text-xs font-semibold uppercase tracking-wider mb-3" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.position2') }}</span>
+                <h3 class="xs:text-lg text-2xl font-bold" :style="{ 'color': colorStore.currentColor.primary }">{{ t('experience.company2') }}</h3>
                 <p class="font-medium mb-4 flex items-center" :style="{ 'color': colorStore.currentColor.secondary }">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -166,7 +166,7 @@ const { t } = useI18n()
                 </p>
               </div>
               <div class="pr-2 border-r-2 border-opacity-30" :style="{ 'border-color': colorStore.currentColor.secondary }">
-                <h4 class="text-lg font-semibold mb-2 flex items-center justify-end" :style="{ 'color': colorStore.currentColor.primary }">
+                <h4 class="xs:text-base text-lg font-semibold mb-2 flex items-center justify-end" :style="{ 'color': colorStore.currentColor.primary }">
                   {{ t('experience.department2') }}
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
@@ -174,25 +174,25 @@ const { t } = useI18n()
                 </h4>
                 <ul class="list-none text-gray-600 space-y-2">
                   <li class="flex items-start justify-end">
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility4') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility4') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
                   </li>
                   <li class="flex items-start justify-end">
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility5') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility5') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
                   </li>
                   <li class="flex items-start justify-end">
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility6') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility6') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>
                   </li>
                   <li class="flex items-start justify-end">
-                    <span class="text-gray-700 dark:text-gray-400">{{ t('experience.responsibility7') }}</span>
+                    <span class="text-gray-700 dark:text-gray-400 xs:text-sm">{{ t('experience.responsibility7') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 flex-shrink-0 mt-0.5" :style="{ 'color': colorStore.currentColor.secondary }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
                     </svg>

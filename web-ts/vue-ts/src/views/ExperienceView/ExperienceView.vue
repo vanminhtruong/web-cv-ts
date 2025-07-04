@@ -15,7 +15,7 @@ const { t } = useI18n()
 
 <template>
   <div class="min-h-screen py-10 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 xs:px-3 sm:px-6 lg:px-8">
       <LazySection threshold="0.1" rootMargin="100px" class="mb-16">
         <WorkExperienceSection />
       </LazySection>
@@ -29,7 +29,7 @@ const { t } = useI18n()
               </svg>
             </div>
           </div>
-          <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('projects.title').toUpperCase() }}</h2>
+          <h2 class="xs:text-2xl text-3xl font-bold inline-block pb-2 border-b-4 transform transition-all duration-300 hover:scale-105" :style="{ 'color': colorStore.currentColor.primary, 'border-color': colorStore.currentColor.primary }">{{ t('projects.title').toUpperCase() }}</h2>
         </div>
 
         <TeamProjectSection />

@@ -6,9 +6,9 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
         <div class="flex-shrink-0">
-          <RouterLink to="/" class="font-bold text-2xl flex items-center border-none outline-none" :style="{ 'color': primaryColor }" @click="closeMobileMenu">
+          <RouterLink to="/" class="font-bold xs:text-xl text-2xl flex items-center border-none outline-none" :style="{ 'color': primaryColor }" @click="closeMobileMenu">
             <span class="mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="xs:h-6 xs:w-6 h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
               </svg>
             </span>
@@ -40,10 +40,10 @@
         
         <div class="xl:hidden">
           <button type="button" @click="toggleMobileMenu" class="text-gray-600 hover:text-primary transition-colors duration-200" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
-            <svg v-if="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg v-if="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg v-else xmlns="http://www.w3.org/2000/svg" class="xs:h-5 xs:w-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

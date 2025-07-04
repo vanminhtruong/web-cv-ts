@@ -1,19 +1,19 @@
 <template>
   <div v-if="isOpen" class="xl:hidden bg-white dark:bg-gray-800 shadow-lg mt-2 py-3 px-4 transition-all duration-300">
     <div class="flex flex-col space-y-3">
-      <RouterLink to="/" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+      <RouterLink to="/" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 xs:text-sm text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
         {{ t('nav.home') }}
       </RouterLink>
-      <RouterLink to="/skills" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+      <RouterLink to="/skills" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 xs:text-sm text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
         {{ t('nav.skills') }}
       </RouterLink>
-      <RouterLink to="/experience" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+      <RouterLink to="/experience" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 xs:text-sm text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
         {{ t('nav.experience') }}
       </RouterLink>
-      <RouterLink to="/contact" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
+      <RouterLink to="/contact" @click="closeMenu" class="text-gray-700 dark:text-gray-300 py-2 xs:text-sm text-base font-medium transition-colors duration-200 nav-link" :style="{ '--hover-color': primaryColor }" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
         {{ t('nav.contact') }}
       </RouterLink>
-      <div class="flex justify-around gap-3 pt-3 border-t border-gray-200 dark:border-gray-700 mt-3">
+      <div class="flex xs:flex-wrap justify-around gap-3 pt-3 border-t border-gray-200 dark:border-gray-700 mt-3">
         <LanguageSwitcher />
         <ColorSwitcher />
         <ThemeToggle />
@@ -69,6 +69,9 @@ export default {
 <style scoped>
 .nav-link {
   position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: 4px;
 }
 
 .nav-link::after {
@@ -80,9 +83,26 @@ export default {
   left: 0;
   background-color: v-bind("primaryColor");
   transition: width 0.3s;
+  display: block;
 }
 
 .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Đảm bảo hiệu ứng hoạt động trên màn hình nhỏ */
+@media (max-width: 639px) {
+  .nav-link::after {
+    height: 1.5px;
+  }
+}
+
+/* Thêm hiệu ứng active cho router-link-active */
+.router-link-active {
+  color: v-bind("primaryColor");
+}
+
+.router-link-active::after {
   width: 100%;
 }
 </style>
