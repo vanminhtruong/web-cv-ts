@@ -105,6 +105,7 @@ export default {
 
 .color-dropdown {
   min-width: 200px;
+  z-index: 50;
 }
 
 .color-option {

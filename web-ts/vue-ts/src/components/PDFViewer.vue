@@ -237,7 +237,6 @@ const toggleFullScreen = () => {
 
 const handleIframeLoad = (event: Event) => {
   try {
-    // Check if the iframe loaded content is an error page
     const iframe = event.target as HTMLIFrameElement;
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
     

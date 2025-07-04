@@ -163,7 +163,7 @@ defineExpose({
   width: 100%;
   height: 3px;
   background-color: rgba(229, 231, 235, 0.3);
-  z-index: 100;
+  z-index: 45;
   overflow: hidden;
 }
 
