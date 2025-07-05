@@ -5,7 +5,6 @@ import { useColorStore } from '../stores/color'
 import { useI18n } from 'vue-i18n'
 
 const colorStore = useColorStore()
-
 const { t } = useI18n()
 const scrollStore = useScrollStore()
 
@@ -18,10 +17,7 @@ onUnmounted(() => {
   window.removeEventListener('scroll', scrollStore.updateScrollPosition)
 })
 
-// Add named export
-defineExpose({
-  // Expose any needed properties or methods
-})
+defineExpose({})
 </script>
 
 <template>

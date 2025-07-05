@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, onMounted } from 'vue'
+import { useDynamicFavicon } from './composables/useDynamicFavicon'
 
 const MainLayout = defineAsyncComponent(() => import('./components/layout/MainLayout.vue'))
+
+// Initialize dynamic favicon
+onMounted(() => {
+  useDynamicFavicon()
+})
 </script>
 
 <template>
